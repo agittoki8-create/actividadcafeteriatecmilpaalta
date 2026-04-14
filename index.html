@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cueva del Mapache</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Poppins', sans-serif; scroll-behavior:smooth; }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      background: linear-gradient(90deg,#ff6a00,#ff0000,#00c6ff);
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo { display:flex; align-items:center; gap:10px; }
+    .logo img { width:40px; height:40px; border-radius:50%; }
+
+    nav a {
+      margin:0 10px;
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+    }
+
+    .hero {
+      height:80vh;
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('img/2.jpeg') center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+    }
+
+    .hero h2 {
+      font-size:48px;
+      background:rgba(0,0,0,0.5);
+      padding:20px;
+      border-radius:10px;
+    }
+
+    .section {
+      padding:60px 10%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    /* TARJETAS MEJORADAS */
+    .card {
+      background:#f5f5f5;
+      padding:30px;
+      border-radius:20px;
+      width:600px;
+      max-width:90%;
+      min-height:200px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.1);
+      margin:auto;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* efecto luz */
+    .card::before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+      transition:0.5s;
+    }
+
+    .card:hover::before {
+      left:100%;
+    }
+
+    .card h3 { font-size:28px; margin-bottom:15px; }
+
+    .card button {
+      margin-top:20px;
+      padding:10px 20px;
+      border:none;
+      border-radius:25px;
+      background:black;
+      color:white;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .card button:hover {
+      background:#ff6a00;
+    }
+
+    .card ul {
+      margin-top:10px;
+      padding-left:20px;
+    }
+
+    .section img {
+      width:100%;
+      border-radius:20px;
+      max-width:500px;
+      transition:0.3s;
+    }
+
+    .section img:hover {
+      transform:scale(1.05);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      padding:60px 10%;
+    }
+
+    .item { background:#eee; border-radius:15px; overflow:hidden; }
+    .item img { width:100%; height:180px; object-fit:cover; }
+    .item div { padding:15px; }
+
+    footer {
+      background:black;
+      color:white;
+      padding:40px;
+      text-align:center;
+    }
+
+    footer a { color:white; margin:0 10px; text-decoration:none; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="img/1.jpeg" alt="logo">
+    <h1>La Cueva del Mapache</h1>
+  </div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+
+    <a href="#nosotros">Nosotros</a>
+    
+    <a href="#vision">Visión</a>
+    <a href="#objetivos">Objetivos</a>
+    <a href="productos.html">Tienda</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <h2>Cafeteria la cueva del mapache</h2>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h3>Nuestra misión</h3>
+    <p>Brindar a los estudiantes universitarios un espacio cómodo y accesible donde puedan disfrutar de bebidas y alimentos de calidad</p>
+    <button onclick="scrollToSection('nosotros')">Conócenos</button>
+  </div>
+  <img src="img/3.jpeg">
+</section>
+
+<section id="nosotros" class="section">
+  <div class="card">
+    <h3>Sobre nosotros</h3>
+    <p>La Cueva del Mapache es una cafetería pensada especialmente para estudiantes universitarios que buscan un espacio cómodo, accesible y agradable para realizar sus actividades académicas y sociales. Nace como una alternativa dentro del entorno estudiantil, ofreciendo bebidas de calidad y alimentos prácticos a precios accesibles.
+
+El ambiente está diseñado para favorecer el estudio, el trabajo en equipo y la convivencia, brindando un lugar tranquilo pero dinámico donde los jóvenes puedan concentrarse, relajarse y compartir ideas. Además, se busca crear una identidad atractiva y cercana que conecte con el estilo de vida universitario.
+
+La Cueva del Mapache aspira a convertirse en un punto de encuentro frecuente para la comunidad estudiantil, ofreciendo no solo productos, sino también una experiencia que combine comodidad, buen servicio y un entorno inspirador.
+</p>
+  </div>
+</section>
+
+
+<section id="vision" class="section">
+  <div class="card">
+    <h3>Visión</h3>
+    <p>Ser la cafetería universitaria de referencia en la comunidad, reconocida por su ambiente inspirador, precios accesibles, excelente atención al cliente y por convertirse en el lugar preferido de los estudiantes para reunirse, estudiar y relajarse.</p>
+  </div>
+</section>
+
+<section id="objetivos" class="section">
+  <div class="card">
+    <h3>Objetivos</h3>
+
+    <p><b>Generales:</b> Ofrecer productos de calidad en un ambiente cómodo y accesible.</p>
+
+    <p><b>Específicos:</b></p>
+    <ul>
+      <li>Ofrecer bebidas y alimentos con ingredientes frescos.</li>
+      <li>Crear un ambiente adecuado para el estudio.</li>
+      <li>Brindar un servicio rápido y amable.</li>
+      <li>Implementar estrategias de promoción.</li>
+      <li>Mantener estándares de higiene y calidad.</li>
+    </ul>
+
+  </div>
+</section>
+
+<section id="politicas" class="section">
+  <div class="card">
+    <h3>Políticas de calidad</h3>
+
+    <p>Ofrecer productos centrados en calidad y seguridad.</p>
+
+    <ul>
+      <li>Incrementar la clientela con promociones.</li>
+      <li>Optimizar la calidad del producto.</li>
+      <li>Posicionamiento local.</li>
+      <li>Control de costos.</li>
+      <li>Recibir retroalimentación.</li>
+    </ul>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 La Cueva del Mapache</p>
+</footer>
+
+<script>
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tienda Mapache</title>
+<style>
+
+body{
+  font-family:Poppins, sans-serif;
+  padding:40px;
+  background: url('img/4.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.6);
+  z-index:-1;
+}
+
+
+h1{text-align:center}
+
+h2{
+  margin-top:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px
+}
+
+.card{
+  background: rgba(255,255,255,0.15); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  border:1px solid rgba(255,255,255,0.3);
+}
+
+button{
+  background:black;
+  color:white;
+  padding:10px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer
+}
+
+#carrito{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:black;
+  color:white;
+  padding:15px;
+  border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="nav">
+  <button onclick="Index()">⬅️ Inicio</button>
+</div>
+
+<h1>Productos en Venta</h1>
+
+<div id="carrito">
+  🛒 Carrito: <span id="contador">0</span>
+</div>
+
+<!-- LOS DE LA CUEVA -->
+<h2>Los de la cueva</h2>
+<div class="grid">
+<div class="card"><h3>Tacos</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Tacos de arrachera</h3><p>$28</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Gordita sencilla</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Gordita con quesillo</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Gordita con carne</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Sopes sencillos</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Sopes con carne</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Pasta con carne</h3><p>$45</p><button onclick="agregar()">Comprar</button></div>
+</div>
+
+<!-- ANTOJOS -->
+<h2>Antojos</h2>
+<div class="grid">
+<div class="card"><h3>Chilaquiles</h3><p>$50</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Tacos dorados</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Enchiladas</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
+</div>
+
+<!-- PANCHONCHITO -->
+<h2>Panchonchito</h2>
+<div class="grid">
+<div class="card"><h3>Torta</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Torta combinada</h3><p>$50</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Torta de chilaquiles</h3><p>$45</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Sándwich</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Cueritos</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Hot Dogs (2 pz)</h3><p>$50</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Hamburguesa sencilla</h3><p>$45</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Hamburguesa hawaiana</h3><p>$55</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Molletes</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
+</div>
+
+<!-- BEBIDAS -->
+<h2>Bebidas</h2>
+<div class="grid">
+<div class="card"><h3>Café chico</h3><p>$18</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Café grande</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Té chico</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Té grande</h3><p>$20</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Atole chico</h3><p>$18</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Atole grande</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Agua 600ml</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Agua 1L</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Coca-Cola 355ml</h3><p>$17</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Coca-Cola 600ml</h3><p>$20</p><button onclick="agregar()">Comprar</button></div>
+</div>
+
+<!-- BOTIN DEL MAPACHE -->
+<h2>Botín del Mapache</h2>
+<div class="grid">
+<div class="card"><h3>Pay de limón</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Pan de dulce</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Galletas empaquetadas</h3><p>$22</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Coctel de fruta</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Gomitas</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Gomitas enchiladas</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Chetos</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Dorilocos</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Maruchan</h3><p>$28</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Papas locas</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Chicharrones preparados</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Papas a la francesa</h3><p>$55</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Doritos</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Chicles 4's</h3><p>$3</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Halls</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
+</div>
+<script>
+function Index(){
+  window.location.href = "index.html";
+}
+</script>
+
+<script>
+let contador = 0;
+function agregar(){
+  contador++;
+  document.getElementById('contador').innerText = contador;
+}
+</script>
+
+</body>
+</html>
