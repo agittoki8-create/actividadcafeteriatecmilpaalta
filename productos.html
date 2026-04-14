@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Tienda Mapache</title>
-<style>
 
+<style>
 body{
   font-family:Poppins, sans-serif;
   padding:40px;
@@ -23,12 +23,8 @@ body::before{
   z-index:-1;
 }
 
-
 h1{text-align:center}
-
-h2{
-  margin-top:40px;
-}
+h2{margin-top:40px}
 
 .grid{
   display:grid;
@@ -39,12 +35,9 @@ h2{
 .card{
   background: rgba(255,255,255,0.15); 
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   padding:20px;
   border-radius:10px;
   text-align:center;
-  box-shadow:0 10px 20px rgba(0,0,0,0.1);
-  border:1px solid rgba(255,255,255,0.3);
 }
 
 button{
@@ -64,102 +57,165 @@ button{
   color:white;
   padding:15px;
   border-radius:10px;
+  cursor:pointer;
 }
-
 </style>
 </head>
 
 <body>
+
 <div class="nav">
   <button onclick="Index()">⬅️ Inicio</button>
 </div>
 
 <h1>Productos en Venta</h1>
 
-<div id="carrito">
+<div id="carrito" onclick="verCarrito()">
   🛒 Carrito: <span id="contador">0</span>
 </div>
 
 <!-- LOS DE LA CUEVA -->
 <h2>Los de la cueva</h2>
 <div class="grid">
-<div class="card"><h3>Tacos</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Tacos de arrachera</h3><p>$28</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Gordita sencilla</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Gordita con quesillo</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Gordita con carne</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Sopes sencillos</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Sopes con carne</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Pasta con carne</h3><p>$45</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Tacos</h3><p>$25</p><button onclick="agregar('Tacos',25)">Comprar</button></div>
+<div class="card"><h3>Tacos de arrachera</h3><p>$28</p><button onclick="agregar('Tacos de arrachera',28)">Comprar</button></div>
+<div class="card"><h3>Gordita sencilla</h3><p>$25</p><button onclick="agregar('Gordita sencilla',25)">Comprar</button></div>
+<div class="card"><h3>Gordita con quesillo</h3><p>$30</p><button onclick="agregar('Gordita con quesillo',30)">Comprar</button></div>
+<div class="card"><h3>Gordita con carne</h3><p>$35</p><button onclick="agregar('Gordita con carne',35)">Comprar</button></div>
+<div class="card"><h3>Sopes sencillos</h3><p>$25</p><button onclick="agregar('Sopes sencillos',25)">Comprar</button></div>
+<div class="card"><h3>Sopes con carne</h3><p>$35</p><button onclick="agregar('Sopes con carne',35)">Comprar</button></div>
+<div class="card"><h3>Pasta con carne</h3><p>$45</p><button onclick="agregar('Pasta con carne',45)">Comprar</button></div>
 </div>
 
 <!-- ANTOJOS -->
 <h2>Antojos</h2>
 <div class="grid">
-<div class="card"><h3>Chilaquiles</h3><p>$50</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Tacos dorados</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Enchiladas</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Chilaquiles</h3><p>$50</p><button onclick="agregar('Chilaquiles',50)">Comprar</button></div>
+<div class="card"><h3>Tacos dorados</h3><p>$35</p><button onclick="agregar('Tacos dorados',35)">Comprar</button></div>
+<div class="card"><h3>Enchiladas</h3><p>$40</p><button onclick="agregar('Enchiladas',40)">Comprar</button></div>
 </div>
 
 <!-- PANCHONCHITO -->
 <h2>Panchonchito</h2>
 <div class="grid">
-<div class="card"><h3>Torta</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Torta combinada</h3><p>$50</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Torta de chilaquiles</h3><p>$45</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Sándwich</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Cueritos</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Hot Dogs (2 pz)</h3><p>$50</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Hamburguesa sencilla</h3><p>$45</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Hamburguesa hawaiana</h3><p>$55</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Molletes</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Torta</h3><p>$40</p><button onclick="agregar('Torta',40)">Comprar</button></div>
+<div class="card"><h3>Torta combinada</h3><p>$50</p><button onclick="agregar('Torta combinada',50)">Comprar</button></div>
+<div class="card"><h3>Torta de chilaquiles</h3><p>$45</p><button onclick="agregar('Torta de chilaquiles',45)">Comprar</button></div>
+<div class="card"><h3>Sándwich</h3><p>$30</p><button onclick="agregar('Sandwich',30)">Comprar</button></div>
+<div class="card"><h3>Cueritos</h3><p>$40</p><button onclick="agregar('Cueritos',40)">Comprar</button></div>
+<div class="card"><h3>Hot Dogs (2 pz)</h3><p>$50</p><button onclick="agregar('Hot Dogs',50)">Comprar</button></div>
+<div class="card"><h3>Hamburguesa sencilla</h3><p>$45</p><button onclick="agregar('Hamburguesa sencilla',45)">Comprar</button></div>
+<div class="card"><h3>Hamburguesa hawaiana</h3><p>$55</p><button onclick="agregar('Hamburguesa hawaiana',55)">Comprar</button></div>
+<div class="card"><h3>Molletes</h3><p>$35</p><button onclick="agregar('Molletes',35)">Comprar</button></div>
 </div>
 
 <!-- BEBIDAS -->
 <h2>Bebidas</h2>
 <div class="grid">
-<div class="card"><h3>Café chico</h3><p>$18</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Café grande</h3><p>$25</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Té chico</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Té grande</h3><p>$20</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Atole chico</h3><p>$18</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Atole grande</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Agua 600ml</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Agua 1L</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Coca-Cola 355ml</h3><p>$17</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Coca-Cola 600ml</h3><p>$20</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Café chico</h3><p>$18</p><button onclick="agregar('Cafe chico',18)">Comprar</button></div>
+<div class="card"><h3>Café grande</h3><p>$25</p><button onclick="agregar('Cafe grande',25)">Comprar</button></div>
+<div class="card"><h3>Té chico</h3><p>$15</p><button onclick="agregar('Te chico',15)">Comprar</button></div>
+<div class="card"><h3>Té grande</h3><p>$20</p><button onclick="agregar('Te grande',20)">Comprar</button></div>
+<div class="card"><h3>Atole chico</h3><p>$18</p><button onclick="agregar('Atole chico',18)">Comprar</button></div>
+<div class="card"><h3>Atole grande</h3><p>$30</p><button onclick="agregar('Atole grande',30)">Comprar</button></div>
+<div class="card"><h3>Agua 600ml</h3><p>$10</p><button onclick="agregar('Agua 600ml',10)">Comprar</button></div>
+<div class="card"><h3>Agua 1L</h3><p>$15</p><button onclick="agregar('Agua 1L',15)">Comprar</button></div>
+<div class="card"><h3>Coca-Cola 355ml</h3><p>$17</p><button onclick="agregar('Coca-Cola 355ml',17)">Comprar</button></div>
+<div class="card"><h3>Coca-Cola 600ml</h3><p>$20</p><button onclick="agregar('Coca-Cola 600ml',20)">Comprar</button></div>
 </div>
 
-<!-- BOTIN DEL MAPACHE -->
+<!-- BOTIN -->
 <h2>Botín del Mapache</h2>
 <div class="grid">
-<div class="card"><h3>Pay de limón</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Pan de dulce</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Galletas empaquetadas</h3><p>$22</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Coctel de fruta</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Gomitas</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Gomitas enchiladas</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Chetos</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Dorilocos</h3><p>$30</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Maruchan</h3><p>$28</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Papas locas</h3><p>$35</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Chicharrones preparados</h3><p>$40</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Papas a la francesa</h3><p>$55</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Doritos</h3><p>$15</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Chicles 4's</h3><p>$3</p><button onclick="agregar()">Comprar</button></div>
-<div class="card"><h3>Halls</h3><p>$10</p><button onclick="agregar()">Comprar</button></div>
+<div class="card"><h3>Pay de limón</h3><p>$30</p><button onclick="agregar('Pay de limon',30)">Comprar</button></div>
+<div class="card"><h3>Pan de dulce</h3><p>$15</p><button onclick="agregar('Pan de dulce',15)">Comprar</button></div>
+<div class="card"><h3>Galletas empaquetadas</h3><p>$22</p><button onclick="agregar('Galletas',22)">Comprar</button></div>
+<div class="card"><h3>Coctel de fruta</h3><p>$40</p><button onclick="agregar('Coctel de fruta',40)">Comprar</button></div>
+<div class="card"><h3>Gomitas</h3><p>$10</p><button onclick="agregar('Gomitas',10)">Comprar</button></div>
+<div class="card"><h3>Gomitas enchiladas</h3><p>$15</p><button onclick="agregar('Gomitas enchiladas',15)">Comprar</button></div>
+<div class="card"><h3>Chetos</h3><p>$10</p><button onclick="agregar('Chetos',10)">Comprar</button></div>
+<div class="card"><h3>Dorilocos</h3><p>$30</p><button onclick="agregar('Dorilocos',30)">Comprar</button></div>
+<div class="card"><h3>Maruchan</h3><p>$28</p><button onclick="agregar('Maruchan',28)">Comprar</button></div>
+<div class="card"><h3>Papas locas</h3><p>$35</p><button onclick="agregar('Papas locas',35)">Comprar</button></div>
+<div class="card"><h3>Chicharrones preparados</h3><p>$40</p><button onclick="agregar('Chicharrones',40)">Comprar</button></div>
+<div class="card"><h3>Papas a la francesa</h3><p>$55</p><button onclick="agregar('Papas francesa',55)">Comprar</button></div>
+<div class="card"><h3>Doritos</h3><p>$15</p><button onclick="agregar('Doritos',15)">Comprar</button></div>
+<div class="card"><h3>Chicles</h3><p>$3</p><button onclick="agregar('Chicles',3)">Comprar</button></div>
+<div class="card"><h3>Halls</h3><p>$10</p><button onclick="agregar('Halls',10)">Comprar</button></div>
 </div>
+
 <script>
 function Index(){
   window.location.href = "index.html";
 }
-</script>
 
-<script>
-let contador = 0;
-function agregar(){
-  contador++;
-  document.getElementById('contador').innerText = contador;
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+actualizarContador();
+
+function agregar(nombre, precio){
+  carrito.push({nombre, precio});
+  guardar();
+}
+
+function eliminar(index){
+  carrito.splice(index,1);
+  guardar();
+  verCarrito();
+}
+
+function guardar(){
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarContador();
+}
+
+function actualizarContador(){
+  document.getElementById('contador').innerText = carrito.length;
+}
+
+function verCarrito(){
+  let total = 0;
+
+  let contenido = `
+  <html>
+  <head>
+  <style>
+  body{font-family:monospace;padding:20px;}
+  h2{text-align:center;}
+  li{display:flex;justify-content:space-between;margin:5px 0;}
+  button{background:red;color:white;border:none;}
+  </style>
+  </head>
+  <body>
+  <h2>🧾 Ticket</h2>
+  <ul>
+  `;
+
+  carrito.forEach((item,index)=>{
+    total += item.precio;
+    contenido += `<li>${item.nombre} $${item.precio}
+    <button onclick="window.opener.eliminar(${index})">X</button></li>`;
+  });
+
+  contenido += `
+  </ul>
+  <hr>
+  <h3>Total: $${total}</h3>
+  <p>👉 Ve con este ticket a ventanilla</p>
+  </body></html>`;
+
+ let ventana = window.open("", "Ticket", "width=350,height=500");
+ventana.document.write(contenido);
+
+// Detectar cuando se cierra el ticket
+let intervalo = setInterval(() => {
+  if (ventana.closed) {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    actualizarContador();
+    clearInterval(intervalo);
+  }
+}, 500);
 }
 </script>
 
