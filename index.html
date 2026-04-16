@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Cueva del Mapache</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -58,7 +59,6 @@
       flex-wrap:wrap;
     }
 
-    /* TARJETAS MEJORADAS */
     .card {
       background:#f5f5f5;
       padding:30px;
@@ -78,7 +78,6 @@
       box-shadow:0 20px 40px rgba(0,0,0,0.2);
     }
 
-    /* efecto luz */
     .card::before {
       content:"";
       position:absolute;
@@ -144,6 +143,7 @@
       padding:40px;
       text-align:center;
     }
+    
 
     footer a { color:white; margin:0 10px; text-decoration:none; }
   </style>
@@ -158,12 +158,11 @@
   </div>
   <nav>
     <a href="#inicio">Inicio</a>
-
-    <a href="#nosotros">Nosotros</a>
-    
+    <a href="#nosotros">Nosotros</a>    
     <a href="#vision">Visión</a>
     <a href="#objetivos">Objetivos</a>
     <a href="productos.html">Tienda</a>
+    <a href="#contacto">Contáctanos</a>
   </nav>
 </header>
 
@@ -235,6 +234,47 @@ La Cueva del Mapache aspira a convertirse en un punto de encuentro frecuente par
   </div>
 </section>
 
+<!-- 🔥 CONTACTO -->
+<section id="contacto" class="section">
+  <div class="card">
+    <h3>📞 Contáctanos</h3>
+
+    <p><b>📧 Correo:</b> lacuevadelmapache@gmail.com</p>
+    <p><b>📱 Teléfono:</b> 55 7377 0100</p>
+
+    <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+
+    <button><i class="fab fa-facebook"></i> Facebook</button>
+    <button><i class="fab fa-instagram"></i> Instagram</button>
+    <button><i class="fab fa-twitter"></i> X</button>
+    <button><i class="fab fa-tiktok"></i> TikTok</button>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h3>📍 Ubicación</h3>
+
+    <p>Independencia Sur 36, Milpa Alta, CDMX</p>
+
+    <div style="width:100%; height:300px; border-radius:15px; overflow:hidden; margin-top:15px;">
+      <iframe 
+        src="https://www.google.com/maps?q=Independencia+Sur+36,+Milpa+Alta,+CDMX&output=embed"
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <button onclick="comoLlegar()">📍 Cómo llegar</button>
+  </div>
+</section>
+
+
+
 <footer>
   <p>© 2026 La Cueva del Mapache</p>
 </footer>
@@ -242,6 +282,10 @@ La Cueva del Mapache aspira a convertirse en un punto de encuentro frecuente par
 <script>
 function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function comoLlegar(){
+  window.open("https://www.google.com/maps/dir/?api=1&destination=Independencia+Sur+36,+Milpa+Alta,+CDMX");
 }
 </script>
 
